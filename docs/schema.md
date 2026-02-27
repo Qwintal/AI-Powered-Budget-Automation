@@ -7,5 +7,5 @@
 | recipient_or_merchant | string | Their name |
 | upi_ref | string | UPI reference ID |
 | bank | string | Name of the Bank |
-| date | ISO 8601 date | Date & Time of Transaction |
+| date | YYYY-MM-DD | Date & Time of Transaction |
 | category | LLM classified category | Type of Transaction |
