@@ -1,6 +1,10 @@
 # AI-Powered SMS Budget Automation (MacroDroid + n8n + Cloudflare Tunnel)
 A self-hosted AI-powered personal finance ingestion pipeline.
 
+Problem statements
+- make a budgeting app, 100% control over data, complete privacy other budgeting app takes unnecessary permission and can sell data, some are fully manually develops a friction in maintaining budget habit 
+- solution to read SMS and show graphs ...
+
 ## Overview
 Automated budgeting pipeline that:
 - Parses SMS transaction data
