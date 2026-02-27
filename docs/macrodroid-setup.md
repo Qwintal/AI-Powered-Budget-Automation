@@ -23,7 +23,7 @@ This enables automated transaction ingestion without granting full SMS access to
   - `UPI`
 Filtering reduces unnecessary webhook calls and improves reliability.
 
-![Setup](screenshots/macrodroid-trigger.png)
+![Trigger](screenshots/macrodroid-trigger.png)
 
 ### Action
 
@@ -42,8 +42,8 @@ Filtering reduces unnecessary webhook calls and improves reliability.
 "timestamp": "[timestamp]"
 }
 ```
-![Setup](screenshots/macrodroid-http.png)
-![Setup](screenshots/macrodroid-http-body.png)
+![http](screenshots/macrodroid-http.png)
+![body](screenshots/macrodroid-http-body.png)
 
 ## 3. Android Permissions Required
 
