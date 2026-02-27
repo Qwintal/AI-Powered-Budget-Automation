@@ -1,0 +1,40 @@
+1. Purpose
+Explain what the macro does:
+Listens for bank SMS → extracts content → sends HTTP POST to webhook.
+
+2. Macro Configuration
+Trigger
+Event: SMS Received
+Sender filter: (e.g., VK-KOTAKB, VM-HDFCBK)
+Optional: Content contains keywords (credited, debited)
+Add screenshot:
+/screenshots/macrodroid-trigger.png
+Then embed:
+![Trigger Setup](../screenshots/macrodroid-trigger.png)
+Action
+HTTP Request
+Method: POST
+URL: https://your-cloudflare-url/webhook
+Content-Type: application/json
+Body:
+Example:
+{
+  "sms_body": "[sms_message]",
+  "sender": "[sender]",
+  "timestamp": "[timestamp]"
+}
+Add screenshot of:
+HTTP action config
+Payload mapping
+
+3. Android Permissions Required
+SMS read permission
+Background execution allowed
+Disable battery optimization
+Explain OEM caveats (MIUI, Realme, etc.).
+
+4. Testing Procedure
+Explain how to verify:
+Send test SMS
+Check n8n execution log
+Confirm row appended
