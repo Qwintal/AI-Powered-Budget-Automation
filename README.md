@@ -27,6 +27,10 @@ Webhook → LLM Categorization → Data Normalization → Google Sheets Append �
 - Ollama – Llama 3.1 8B (local LLM)
 - Google Sheets (dashboard layer)
 
+## Screenshots
+![workflow](screenshots/workflow.png)
+![workflow](screenshots/dashboard-piechart.png)
+
 ## How It Works
 1. SMS received from bank. 
 2. MacroDroid triggers HTTP POST request. 
