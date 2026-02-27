@@ -147,3 +147,9 @@ Or validate request body signature
 Or restrict IP
 Without this, your system is insecure.
 
+Future Improvements
+Replace Google Sheets with PostgreSQL for structured storage and better scalability.
+Introduce proper indexing and transaction IDs for deduplication.
+Connect PostgreSQL to Power BI (or similar BI tool) for richer dashboards and time-series analysis.
+Add basic authentication + request signature validation to secure the webhook.
+Implement rule-based pre-classification before LLM to reduce misclassification.
