@@ -7,7 +7,7 @@ This macro:
 - Sends a structured HTTP POST request to the n8n webhook endpoint  
 This enables automated transaction ingestion without granting full SMS access to third-party budgeting applications.
 
-![Macro Setup](screenshots/img1.jpeg)
+![Setup](screenshots/macrodroid.png)
 
 ## 2. Macro Configuration
 ### Trigger
@@ -23,7 +23,7 @@ This enables automated transaction ingestion without granting full SMS access to
   - `UPI`
 Filtering reduces unnecessary webhook calls and improves reliability.
 
-![Macro Setup](screenshots/img2.jpeg)
+![Setup](screenshots/macrodroid-trigger.png)
 
 ### Action
 
@@ -42,8 +42,8 @@ Filtering reduces unnecessary webhook calls and improves reliability.
 "timestamp": "[timestamp]"
 }
 ```
-![Macro Setup](screenshots/img3.jpeg)
-![Macro Setup](screenshots/img4.jpeg)
+![Setup](screenshots/macrodroid-http.png)
+![Setup](screenshots/macrodroid-http-body.png)
 
 ## 3. Android Permissions Required
 
