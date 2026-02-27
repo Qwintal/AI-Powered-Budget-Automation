@@ -1,4 +1,4 @@
-# Automated Budget Tracker (n8n + LLM + Google Sheets)
+# AI-Powered SMS Budget Automation (MacroDroid + n8n + Cloudflare Tunnel)
 A self-hosted AI-powered personal finance ingestion pipeline.
 
 ## Overview
