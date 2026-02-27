@@ -45,3 +45,49 @@ SMS → MacroDroid → n8n Webhook (Cloudflare Tunnel)
 /docs/data-flow.md
 /README.md
 /screenshots/
+
+Problem
+  Most budgeting apps:
+  Require invasive permissions
+  Lock data behind proprietary systems
+  Lack automation flexibility
+
+This system:
+  Captures transaction SMS locally
+  Sends only structured payload to webhook
+  Self-hosted
+  AI-categorizes transactions
+  Stores data in structured format
+
+Android SMS
+   ↓
+MacroDroid (Trigger + HTTP POST)
+   ↓
+Cloudflare Tunnel (Secure Public Endpoint)
+   ↓
+n8n Webhook
+   ↓
+LLM Categorization
+   ↓
+Google Sheets / PostgreSQL
+   ↓
+Dashboard
+
+Tech Stack
+  MacroDroid (Android automation)
+  n8n (workflow orchestration)
+  Cloudflare Tunnel (secure reverse proxy)
+  OpenAI API (classification)
+  Google Sheets API
+
+Why Cloudflare Tunnel?
+  Avoids port forwarding
+  No public IP exposure
+  Encrypted connection
+  Free tier
+
+Architecture Document (docs/architecture.md)
+Why webhook instead of polling
+Why tunnel instead of ngrok
+Security considerations
+Failure points
