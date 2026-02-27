@@ -29,11 +29,11 @@ Webhook → LLM Categorization → Data Normalization → Google Sheets Append �
 
 ## How It Works
 1.SMS received from bank. \
-2.MacroDroid triggers HTTP POST request. /
-3.Cloudflare Tunnel securely exposes local n8n instance.
-4.n8n processes payload.
-5.LLM extracts and classifies transaction.
-6.Structured data appended to storage.
+2.MacroDroid triggers HTTP POST request. \
+3.Cloudflare Tunnel securely exposes local n8n instance. \
+4.n8n processes payload. \
+5.LLM extracts and classifies transaction. \
+6.Structured data appended to storage. \
 7.Dashboard updates automatically.
 
 ## Limitations
