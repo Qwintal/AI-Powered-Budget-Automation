@@ -1,0 +1,249 @@
+{
+  "name": "Budget",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "hello123",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -96,
+        -48
+      ],
+      "id": "6195f9d8-1540-43ee-8696-28cc8e307f05",
+      "name": "Webhook",
+      "webhookId": "555072bd-5d24-49c0-925d-48a2947f11ae"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Extract transaction details from this bank SMS and return ONLY a valid JSON object, nothing else, no explanation:\n\nSMS: {{ $json.body.message }}\n\nReturn this exact JSON structure:\n{\n  \"amount\": 1.00,\n  \"currency\": \"INR\",\n  \"transaction_type\": \"debit or credit\",\n  \"recipient_or_merchant\": \"who was paid or who paid\",\n  \"upi_ref\": \"reference number if present\",\n  \"bank\": \"bank name\",\n  \"date\": \"YYYY-MM-DD\",\n  \"category\": \"one of: Food/Transport/Shopping/Utilities/Transfer/Investment/Income/EMI/Other\"\n}",
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        128,
+        -48
+      ],
+      "id": "521f989e-c090-4717-8558-7a9a8dc1cdfa",
+      "name": "Basic LLM Chain"
+    },
+    {
+      "parameters": {
+        "model": "llama3.1:8b",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmOllama",
+      "typeVersion": 1,
+      "position": [
+        176,
+        112
+      ],
+      "id": "14bb53d0-8f92-4015-ad22-8052fd566813",
+      "name": "Ollama Model",
+      "credentials": {
+        "ollamaApi": {
+          "id": "7GrAnKeB0dQh293Z",
+          "name": "Ollama account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const text = $input.first().json.text;\nconst cleaned = text.replace(/\\\\n/g, '').trim();\nconst parsed = JSON.parse(cleaned);\nreturn [{ json: parsed }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        480,
+        -48
+      ],
+      "id": "17558306-e040-47d1-9adf-7d0c763e0660",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1-oBITXAcmMsXinwQVphvgpuzpZDHLpp9pNsCJIKxxwA/edit?gid=0#gid=0",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Transaction",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1-oBITXAcmMsXinwQVphvgpuzpZDHLpp9pNsCJIKxxwA/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "amount": "={{ $json.amount }}",
+            "currency": "={{ $json.currency }}",
+            "transaction_type": "={{ $json.transaction_type }}",
+            "recipient_or_merchant": "={{ $json.recipient_or_merchant }}",
+            "upi_ref": "={{ $json.upi_ref }}",
+            "bank": "={{ $json.bank }}",
+            "date": "={{ $json.date }}",
+            "category": "={{ $json.category }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "amount",
+              "displayName": "amount",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "currency",
+              "displayName": "currency",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "transaction_type",
+              "displayName": "transaction_type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "recipient_or_merchant",
+              "displayName": "recipient_or_merchant",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "upi_ref",
+              "displayName": "upi_ref",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "bank",
+              "displayName": "bank",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "date",
+              "displayName": "date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "category",
+              "displayName": "category",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        688,
+        -48
+      ],
+      "id": "69edc6eb-0d85-4e23-ab5c-050a22ea3fdc",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SpUM4hebKVsufhF4",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ollama Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "91f1a66f-5fc7-417d-9c9c-acb3e92816f9",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "977874d0683fe3173450bf0ae634cdb735ceab28b58c79af8e727bc5d96f8a09"
+  },
+  "id": "n5NXwKHsFydnnrwB",
+  "tags": []
+}
