@@ -85,9 +85,65 @@ Why Cloudflare Tunnel?
   No public IP exposure
   Encrypted connection
   Free tier
-
+  
 Architecture Document (docs/architecture.md)
 Why webhook instead of polling
 Why tunnel instead of ngrok
 Security considerations
 Failure points
+
+Tradeoffs of a privacy-first, self-hosted automation system.
+1. Cloudflare Tunnel (Free Tier Constraints)
+Ephemeral public URL when not using a custom domain.
+Manual reconfiguration required if tunnel restarts.
+No guaranteed uptime SLA.
+Adds external dependency layer to a self-hosted system.
+Mitigation:
+Use a custom domain + persistent tunnel configuration, or deploy on a VPS with fixed endpoint.
+2. MacroDroid Complexity & Battery Impact
+Rule configuration is non-trivial.
+Continuous SMS monitoring + background HTTP calls may increase battery usage.
+Android background restrictions may interrupt execution depending on OEM policies.
+Mitigation:
+Whitelist app from battery optimization.
+Long-term alternative: replace with a lightweight Android app using SMS BroadcastReceiver.
+3. Cash Transactions Not Captured
+System only captures digital transactions (SMS-based).
+Cash payments require manual entry.
+Results in incomplete spending analytics.
+Mitigation:
+Add a lightweight manual entry form (Google Form or simple frontend).
+4. 24/7 Runtime Dependency
+n8n must remain active.
+Ollama + Llama 3.1 (8B) must be running continuously.
+Hardware resource consumption (RAM/CPU).
+System fails silently if local server goes down.
+This is a self-hosted tradeoff.
+Mitigation:
+Deploy on:
+Low-cost VPS
+Home server with monitoring
+Add health checks + auto-restart
+5. LLM Classification Errors
+Category accuracy depends on prompt quality.
+Ambiguous merchant names reduce reliability.
+Model may misclassify edge cases.
+Using Ollama + Llama 3.1 8B improves privacy but reduces classification accuracy compared to larger models
+Mitigation Approaches:
+Add deterministic rules before LLM (regex for known merchants)
+Store corrections and build a feedback loop
+Add few-shot examples in prompt
+Fine-tune smaller model (advanced)
+Add One More Critical Con (You Missed It)
+6. Webhook Security Risk
+If webhook is publicly accessible without verification:
+Anyone can inject fake transactions.
+System can be spammed.
+No request signature validation.
+This is a serious issue.
+You should at minimum:
+Add secret token header validation in n8n
+Or validate request body signature
+Or restrict IP
+Without this, your system is insecure.
+
