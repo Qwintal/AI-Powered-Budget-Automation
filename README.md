@@ -28,8 +28,8 @@ Webhook → LLM Categorization → Data Normalization → Google Sheets Append �
 - Google Sheets (dashboard layer)
 
 ## How It Works
-1.SMS received from bank. \n
-2.MacroDroid triggers HTTP POST request. /n
+1.SMS received from bank. \
+2.MacroDroid triggers HTTP POST request. /
 3.Cloudflare Tunnel securely exposes local n8n instance.
 4.n8n processes payload.
 5.LLM extracts and classifies transaction.
