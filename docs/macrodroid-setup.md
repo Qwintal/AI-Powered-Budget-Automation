@@ -43,7 +43,7 @@ Filtering reduces unnecessary webhook calls and improves reliability.
 }
 ```
 ![MacroDroid HTTP Setup](/screenshots/macrodroid-http.png)
-![MacroDroid HTTP Body](docs/screenshots/macrodroid-http-body.png)
+![MacroDroid HTTP Body](/screenshots/macrodroid-http-body.png)
 ## 3. Android Permissions Required
 
 ### MacroDroid must be granted:
