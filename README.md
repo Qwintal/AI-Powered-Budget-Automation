@@ -1,4 +1,5 @@
 # Automated Budget Tracker (n8n + LLM + Google Sheets)
+A self-hosted AI-powered personal finance ingestion pipeline.
 
 ## Overview
 Automated budgeting pipeline that:
@@ -33,3 +34,14 @@ Webhook → LLM Categorization → Data Normalization → Google Sheets Append �
 - Bank-level aggregation
 - PostgreSQL backend
 - Authentication layer
+- Add monthly trend charts
+- Add spending alerts
+
+SMS → MacroDroid → n8n Webhook (Cloudflare Tunnel) 
+→ LLM Categorization → Google Sheets
+
+/n8n/workflow.json
+/docs/architecture.md
+/docs/data-flow.md
+/README.md
+/screenshots/
