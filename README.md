@@ -1,5 +1,6 @@
 # AI-Powered SMS Budget Automation
 ## (MacroDroid + n8n + Cloudflare Tunnel)
+# Event-driven financial transaction pipeline using Android automation, n8n orchestration, local LLM categorization (Ollama), and secure webhook routing via Cloudflare Tunnel.
 
 ## Problem
 - Most budgeting apps:
