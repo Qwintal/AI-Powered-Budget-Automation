@@ -117,9 +117,8 @@ Malformed SMS stored in raw form with failure flags for later review.
 - Add monthly trend charts 
 - Add spending alerts/limit 
 
-## Docs folder reference
-/docs
-  macrodroid-setup.md ( How to set up macrodroid ) \
-  n8n-workflow.md ( How to set up n8n ) \
-  cloudflare-tunnel.md ( How to get Free cloudflare tunnel ) \
-  storage-schema.md ( How to store data ) \
+## 📂 Documentation
+- [MacroDroid Setup](docs/macrodroid-setup.md)
+- [n8n Workflow Configuration](docs/n8n-workflow.md)
+- [Cloudflare Tunnel Setup (Free Tier)](docs/cloudflare-tunnel.md)
+- [Storage Schema Design](docs/storage-schema.md)
