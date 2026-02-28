@@ -27,6 +27,7 @@ Why local trigger?
 - Avoid third-party SMS readers
 - Preserve privacy
 - Reduce attack surface \
+
 Trade-off:
 - Device must remain active
 - Battery impact possible
@@ -36,6 +37,7 @@ Why not expose local IP directly?
 - Avoid port forwarding
 - Avoid exposing home network
 - Simplify secure remote access \
+
 Trade-off:
 - Free plan creates temporary URLs
 - Reliance on external service
