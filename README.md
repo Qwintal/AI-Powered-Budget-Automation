@@ -3,7 +3,7 @@
 ### Event-driven financial transaction pipeline using Android automation, n8n orchestration, local LLM categorization (Ollama), and secure webhook routing via Cloudflare Tunnel.
 
 ## Problem
-- Most budgeting apps:
+Most budgeting apps:
 - Require broad device permissions
 - Lock data into proprietary ecosystems
 - Require manual entry, creating friction
