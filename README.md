@@ -1,6 +1,4 @@
-# AI-Powered SMS Budget Automation
-## (MacroDroid + n8n + Cloudflare Tunnel)
-### Event-driven financial transaction pipeline using Android automation, n8n orchestration, local LLM categorization (Ollama), and secure webhook routing via Cloudflare Tunnel.
+# Event-Driven Personal Finance Automation System
 
 ## Problem
 Most budgeting apps:
@@ -12,11 +10,11 @@ Most budgeting apps:
 - Build a privacy-first, self-hosted budgeting pipeline with full data control.
 
 ## Overview
-- Captures transaction SMS locally (Android)
-- Sends structured payload to a secure webhook
-- Uses a local LLM (Ollama – Llama 3.1 8B) for categorization
-- Stores transactions in Google Sheets (or PostgreSQL)
-- Generates automatic spending breakdown charts
+- Event-driven SMS capture on Android
+- Secure webhook ingestion layer
+- Local LLM-based transaction categorization
+- Structured data storage (Google Sheets / PostgreSQL)
+- Automated summary dashboard
 
 ## Architecture
 ![workflow](screenshots/architecture.png)
@@ -93,28 +91,16 @@ Trade-off:
 6. Structured data appended to storage. 
 7. Dashboard updates automatically.
 
-## Failure & Risk Handling
-- What happens if LLM fails? \
-LLM failures default to Uncategorized while preserving raw data.
-- What if webhook is spammed? \
-Webhook abuse mitigated through request validation and token-based authentication.
-- How deduplication is handled? (planned) \
-The system creates a unique fingerprint for each transaction and checks if it already exists before saving it, so the same SMS cannot be recorded twice.
-- How malformed SMS is handled? (planned) \ 
-Malformed SMS stored in raw form with failure flags for later review.
-
-## Future Improvements
-- Replace Google Sheets with PostgreSQL.
--Add indexing and transaction deduplication.
-- Integrate with Power BI for advanced analytics.
-- Implement webhook authentication and request validation.
-- Add rule-based pre-classification before LLM.
-- Add monthly trend and anomaly detection.
+## Reliability & Risk Handling
+- **LLM failure:** Defaults to `Uncategorized` while preserving raw SMS data.
+- **Webhook abuse:** Mitigated via token-based request validation (authentication planned).
+- **Duplicate transactions:** Prevented through unique transaction fingerprinting (planned).
+- **Malformed SMS:** Stored with failure flags for later review.
 
 ## Improvements Planned
 - Power Bi Dashboard 
 - PostgreSQL backend 
-- Add monthly trend charts 
+- Implement webhook authentication and request validation.
 - Add spending alerts/limit 
 
 ## 📂 Documentation
