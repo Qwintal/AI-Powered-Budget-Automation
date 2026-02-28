@@ -23,9 +23,11 @@ https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/instal
 ## Step 2: Start n8n
 Ensure it runs at: (http://localhost:5678) \
 start Tunnel \
-cloudflared tunnel --url http://localhost:5678 \ 
-Cloudflare will output something like: (https://random-string.trycloudflare.com) \ 
-This is your public HTTPS endpoint.
+```
+cloudflared tunnel --url http://localhost:5678
+``` 
+Cloudflare will output something like: (https://random-string.trycloudflare.com) 
+- This is your public HTTPS endpoint.
 
 ### Limitations of Temporary Tunnel
 - URL changes each restart
