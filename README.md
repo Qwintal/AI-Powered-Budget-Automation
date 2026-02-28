@@ -26,7 +26,7 @@ Most budgeting apps:
 Why local trigger?
 - Avoid third-party SMS readers
 - Preserve privacy
-- Reduce attack surface \
+- Reduce attack surface 
 
 Trade-off:
 - Device must remain active
@@ -36,7 +36,7 @@ Trade-off:
 Why not expose local IP directly?
 - Avoid port forwarding
 - Avoid exposing home network
-- Simplify secure remote access \
+- Simplify secure remote access 
 
 Trade-off:
 - Free plan creates temporary URLs
@@ -47,7 +47,7 @@ Why orchestration instead of writing custom server?
 - Visual workflow control
 - Easier debugging
 - Faster iteration
-- Clear separation of triggers and processing \
+- Clear separation of triggers and processing 
 
 Trade-off:
 - Requires 24/7 runtime
@@ -56,7 +56,7 @@ Trade-off:
 Why local inference instead of OpenAI API?
 - Privacy (financial data)
 - No per-call cost
-- Offline capability \
+- Offline capability 
 
 Trade-off:
 - Hardware requirements
@@ -67,7 +67,7 @@ Trade-off:
 Why not PostgreSQL initially?
 - Rapid prototyping
 - Simpler dashboarding
-- Lower setup friction \
+- Lower setup friction 
 
 Trade-off:
 - Limited scalability
@@ -94,13 +94,13 @@ Trade-off:
 7. Dashboard updates automatically.
 
 ## Failure & Risk Handling
-- What happens if LLM fails?
+- What happens if LLM fails? /
 LLM failures default to Uncategorized while preserving raw data.
-- What if webhook is spammed?
+- What if webhook is spammed? /
 Webhook abuse mitigated through request validation and token-based authentication.
-- How deduplication is handled? (planned)
+- How deduplication is handled? (planned) /
 The system creates a unique fingerprint for each transaction and checks if it already exists before saving it, so the same SMS cannot be recorded twice.
-- How malformed SMS is handled? (planned)
+- How malformed SMS is handled? (planned) /
 Malformed SMS stored in raw form with failure flags for later review.
 
 ## Future Improvements
@@ -112,10 +112,10 @@ Malformed SMS stored in raw form with failure flags for later review.
 - Add monthly trend and anomaly detection.
 
 ## Improvements Planned
-- Power Bi Dashboard 
-- PostgreSQL backend
-- Add monthly trend charts
-- Add spending alerts/limit
+- Power Bi Dashboard / 
+- PostgreSQL backend / 
+- Add monthly trend charts / 
+- Add spending alerts/limit /
 
 ## Docs folder reference
 /docs
