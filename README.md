@@ -21,12 +21,53 @@
 ## Architecture
 Webhook → LLM Categorization → Data Normalization → Google Sheets Append → Summary Dashboard
 
-## Tech Stack
-- MacroDroid (Android automation)
-- n8n (workflow orchestration)
-- Cloudflare Tunnel (secure reverse proxy)
-- Ollama – Llama 3.1 8B (local LLM)
-- Google Sheets (dashboard layer)
+## Tech Stack & Limitations
+### Android + MacroDroid
+Why local trigger?
+- Avoid third-party SMS readers
+- Preserve privacy
+- Reduce attack surface
+Trade-off:
+- Device must remain active
+- Battery impact possible
+
+### Cloudflare Tunnel
+Why not expose local IP directly?
+- Avoid port forwarding
+- Avoid exposing home network
+- Simplify secure remote access
+Trade-off:
+- Free plan creates temporary URLs
+- Reliance on external service
+
+### n8n
+Why orchestration instead of writing custom server?
+- Visual workflow control
+- Easier debugging
+- Faster iteration
+- Clear separation of triggers and processing
+Trade-off:
+- Requires 24/7 runtime
+
+## Local LLM (Ollama)
+Why local inference instead of OpenAI API?
+- Privacy (financial data)
+- No per-call cost
+- Offline capability
+Trade-off:
+- Hardware requirements
+- Slightly lower model quality
+- Slower inference
+
+## Google Sheets (current version)
+Why not PostgreSQL initially?
+- Rapid prototyping
+- Simpler dashboarding
+- Lower setup friction
+Trade-off:
+- Limited scalability
+- No strict schema enforcement
+- Weak indexing
 
 ## Screenshots
 ![workflow](screenshots/workflow.png)
@@ -40,14 +81,6 @@ Webhook → LLM Categorization → Data Normalization → Google Sheets Append �
 5. LLM extracts and classifies transaction. 
 6. Structured data appended to storage. 
 7. Dashboard updates automatically.
-
-## Limitations
-- Free Cloudflare Tunnel generates temporary URLs.
-- Requires 24/7 runtime (n8n + Ollama).
-- LLM categorization may be inaccurate.
-- Cash transactions require manual entry.
-- Webhook requires proper authentication to prevent abuse.
-- MacroDroid setup complexity and potential battery impact.
 
 ## Future Improvements
 - Replace Google Sheets with PostgreSQL.
