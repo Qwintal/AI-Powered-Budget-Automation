@@ -9,13 +9,13 @@ Expose a locally running n8n instance securely to the internet without:
 ### Cloudflare Tunnel creates a secure outbound connection from your local machine to Cloudflare’s edge network, enabling HTTPS access to your local webhook endpoint.
 
 ## Architecture Overview
-Local n8n (localhost:5678)
-        ↓
-cloudflared (tunnel client)
-        ↓
-Cloudflare Edge Network
-        ↓
-Public HTTPS URL
+Local n8n (localhost:5678) \ 
+        ↓ \ 
+cloudflared (tunnel client) \
+        ↓ \ 
+Cloudflare Edge Network \ 
+        ↓ \ 
+Public HTTPS URL 
 
 ## Step 1: Install cloudflared
 
