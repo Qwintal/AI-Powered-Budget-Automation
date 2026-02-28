@@ -50,7 +50,7 @@ Why orchestration instead of writing custom server?
 Trade-off:
 - Requires 24/7 runtime
 
-## Local LLM (Ollama)
+### Local LLM (Ollama)
 Why local inference instead of OpenAI API?
 - Privacy (financial data)
 - No per-call cost
@@ -61,7 +61,7 @@ Trade-off:
 - Slightly lower model quality
 - Slower inference
 
-## Google Sheets (current version)
+### Google Sheets (current version)
 Why not PostgreSQL initially?
 - Rapid prototyping
 - Simpler dashboarding
@@ -72,7 +72,7 @@ Trade-off:
 - No strict schema enforcement
 - Weak indexing
 
-## Overall Limitation
+### Overall Limitation
 - Requires always-on services
 - Limited scalability
 - Manual setup complexity
