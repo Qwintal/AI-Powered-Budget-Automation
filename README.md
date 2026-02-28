@@ -94,13 +94,13 @@ Trade-off:
 7. Dashboard updates automatically.
 
 ## Failure & Risk Handling
-- What happens if LLM fails? /
+- What happens if LLM fails? \
 LLM failures default to Uncategorized while preserving raw data.
-- What if webhook is spammed? /
+- What if webhook is spammed? \
 Webhook abuse mitigated through request validation and token-based authentication.
-- How deduplication is handled? (planned) /
+- How deduplication is handled? (planned) \
 The system creates a unique fingerprint for each transaction and checks if it already exists before saving it, so the same SMS cannot be recorded twice.
-- How malformed SMS is handled? (planned) /
+- How malformed SMS is handled? (planned) \ 
 Malformed SMS stored in raw form with failure flags for later review.
 
 ## Future Improvements
@@ -112,14 +112,14 @@ Malformed SMS stored in raw form with failure flags for later review.
 - Add monthly trend and anomaly detection.
 
 ## Improvements Planned
-- Power Bi Dashboard / 
-- PostgreSQL backend / 
-- Add monthly trend charts / 
-- Add spending alerts/limit /
+- Power Bi Dashboard 
+- PostgreSQL backend 
+- Add monthly trend charts 
+- Add spending alerts/limit 
 
 ## Docs folder reference
 /docs
-  macrodroid-setup.md ( How to set up macrodroid )
-  n8n-workflow.md ( How to set up n8n )
-  cloudflare-tunnel.md ( How to get Free cloudflare tunnel )
-  storage-schema.md ( How to store data )
+  macrodroid-setup.md ( How to set up macrodroid ) \
+  n8n-workflow.md ( How to set up n8n ) \
+  cloudflare-tunnel.md ( How to get Free cloudflare tunnel ) \
+  storage-schema.md ( How to store data ) \
