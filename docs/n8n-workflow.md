@@ -1,1 +1,1 @@
-!(Workflow)[/screenshots/architecture.png]
+![Workflow](/screenshots/workflow.png)
