@@ -74,6 +74,12 @@ Trade-off:
 - No strict schema enforcement
 - Weak indexing
 
+## Overall Limitation
+- Requires always-on services
+- Limited scalability
+- Manual setup complexity
+- No enterprise-grade security
+
 ## Screenshots
 ![workflow](screenshots/workflow.png)
 ![workflow](screenshots/dashboard-piechart.png)
@@ -86,6 +92,16 @@ Trade-off:
 5. LLM extracts and classifies transaction. 
 6. Structured data appended to storage. 
 7. Dashboard updates automatically.
+
+## Failure & Risk Handling
+- What happens if LLM fails?
+LLM failures default to Uncategorized while preserving raw data.
+- What if webhook is spammed?
+Webhook abuse mitigated through request validation and token-based authentication.
+- How deduplication is handled? (planned)
+The system creates a unique fingerprint for each transaction and checks if it already exists before saving it, so the same SMS cannot be recorded twice.
+- How malformed SMS is handled? (planned)
+Malformed SMS stored in raw form with failure flags for later review.
 
 ## Future Improvements
 - Replace Google Sheets with PostgreSQL.
@@ -100,3 +116,10 @@ Trade-off:
 - PostgreSQL backend
 - Add monthly trend charts
 - Add spending alerts/limit
+
+## Docs folder reference
+/docs
+  macrodroid-setup.md ( How to set up macrodroid )
+  n8n-workflow.md ( How to set up n8n )
+  cloudflare-tunnel.md ( How to get Free cloudflare tunnel )
+  storage-schema.md ( How to store data )
