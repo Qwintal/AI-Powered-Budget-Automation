@@ -26,7 +26,7 @@ Webhook → LLM Categorization → Data Normalization → Google Sheets Append �
 Why local trigger?
 - Avoid third-party SMS readers
 - Preserve privacy
-- Reduce attack surface
+- Reduce attack surface /
 Trade-off:
 - Device must remain active
 - Battery impact possible
@@ -35,7 +35,7 @@ Trade-off:
 Why not expose local IP directly?
 - Avoid port forwarding
 - Avoid exposing home network
-- Simplify secure remote access
+- Simplify secure remote access /
 Trade-off:
 - Free plan creates temporary URLs
 - Reliance on external service
@@ -45,7 +45,7 @@ Why orchestration instead of writing custom server?
 - Visual workflow control
 - Easier debugging
 - Faster iteration
-- Clear separation of triggers and processing
+- Clear separation of triggers and processing /
 Trade-off:
 - Requires 24/7 runtime
 
@@ -53,7 +53,7 @@ Trade-off:
 Why local inference instead of OpenAI API?
 - Privacy (financial data)
 - No per-call cost
-- Offline capability
+- Offline capability /
 Trade-off:
 - Hardware requirements
 - Slightly lower model quality
@@ -63,7 +63,7 @@ Trade-off:
 Why not PostgreSQL initially?
 - Rapid prototyping
 - Simpler dashboarding
-- Lower setup friction
+- Lower setup friction /
 Trade-off:
 - Limited scalability
 - No strict schema enforcement
