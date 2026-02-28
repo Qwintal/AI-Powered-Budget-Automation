@@ -44,10 +44,10 @@ If LLM fails:
 - Set llm_status = failed
 
 ### Step 3 – Storage Node
-Option A – Google Sheets Node \ 
-Append Row \ 
-Map structured fields to columns \ 
-Option B – PostgreSQL Node \ 
-Insert into transactions table \
-Use parameterized query \ 
-Prevent duplicates via unique constraint \
+#### Option A – Google Sheets Node
+- Append Row 
+- Map structured fields to columns 
+#### Option B – PostgreSQL Node 
+- Insert into transactions table
+- Use parameterized query 
+- Prevent duplicates via unique constraint
