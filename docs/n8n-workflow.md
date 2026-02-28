@@ -11,7 +11,7 @@ Configure n8n as the orchestration layer that:
 ![Workflow](/screenshots/workflow.png)
 
 ## Install using docker
-![Refer](https://docs.n8n.io/hosting/installation/docker/)
+https://docs.n8n.io/hosting/installation/docker/
 
 ## Core Workflow Design
 ### Step 1 – Webhook Node
