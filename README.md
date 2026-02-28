@@ -48,6 +48,7 @@ Why orchestration instead of writing custom server?
 - Easier debugging
 - Faster iteration
 - Clear separation of triggers and processing \
+
 Trade-off:
 - Requires 24/7 runtime
 
@@ -56,6 +57,7 @@ Why local inference instead of OpenAI API?
 - Privacy (financial data)
 - No per-call cost
 - Offline capability \
+
 Trade-off:
 - Hardware requirements
 - Slightly lower model quality
@@ -66,6 +68,7 @@ Why not PostgreSQL initially?
 - Rapid prototyping
 - Simpler dashboarding
 - Lower setup friction \
+
 Trade-off:
 - Limited scalability
 - No strict schema enforcement
