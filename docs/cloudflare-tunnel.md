@@ -21,10 +21,10 @@ Or download from:
 https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/installation/
 
 ## Step 2: Start n8n
-Ensure it runs at: (http://localhost:5678)
-Step 3: Start Tunnel
-cloudflared tunnel --url http://localhost:5678
-Cloudflare will output something like: (https://random-string.trycloudflare.com)
+Ensure it runs at: (http://localhost:5678) \
+start Tunnel \
+cloudflared tunnel --url http://localhost:5678 \ 
+Cloudflare will output something like: (https://random-string.trycloudflare.com) \ 
 This is your public HTTPS endpoint.
 
 ### Limitations of Temporary Tunnel
@@ -35,5 +35,5 @@ This is your public HTTPS endpoint.
 ### Using with MacroDroid
 In MacroDroid:
 - Set HTTP POST
-- Target URL: (https://your-public-url/webhook/sms)
+- Target URL: (https://your-public-url/webhook)
 - Send structured JSON payload
