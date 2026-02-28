@@ -19,7 +19,7 @@ Most budgeting apps:
 - Generates automatic spending breakdown charts
 
 ## Architecture
-![workflow](screenshots/architenture.png)
+![workflow](screenshots/architecture.png)
 
 ## Tech Stack & Limitations
 ### Android + MacroDroid
