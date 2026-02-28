@@ -57,9 +57,7 @@ Webhook → LLM Categorization → Data Normalization → Google Sheets Append �
 - Add monthly trend and anomaly detection.
 
 ## Improvements Planned
-- Monthly filtering
-- Bank-level aggregation
+- Power Bi Dashboard 
 - PostgreSQL backend
-- Authentication layer
 - Add monthly trend charts
-- Add spending alerts
+- Add spending alerts/limit
