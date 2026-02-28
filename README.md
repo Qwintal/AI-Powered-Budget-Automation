@@ -19,7 +19,7 @@ Most budgeting apps:
 - Generates automatic spending breakdown charts
 
 ## Architecture
-Webhook → LLM Categorization → Data Normalization → Google Sheets Append → Summary Dashboard
+![workflow](screenshots/architenture.png)
 
 ## Tech Stack & Limitations
 ### Android + MacroDroid
